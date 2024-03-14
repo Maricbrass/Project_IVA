@@ -17,7 +17,7 @@ extension MyHomeType on HomeType {
 
   //lottie
   String get lottie => switch (this) {
-        HomeType.aiChatBot => 'ai_hand_waving.json',
+        HomeType.aiChatBot => 'Robot float.json',
         HomeType.aiImage => 'ai_play.json',
         HomeType.aiTranslator => 'ai_ask_me.json',
       };

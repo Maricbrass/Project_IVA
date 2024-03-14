@@ -42,7 +42,7 @@ class _TranslatorFeatureState extends State<TranslatorFeature> {
                 width: mq.width * .4,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blue),
+                    border: Border.all(color: Colors.purple),
                     borderRadius: const BorderRadius.all(Radius.circular(15))),
                 child:
                     Obx(() => Text(_c.from.isEmpty ? 'Auto' : _c.from.value)),
@@ -56,7 +56,7 @@ class _TranslatorFeatureState extends State<TranslatorFeature> {
                   () => Icon(
                     CupertinoIcons.repeat,
                     color: _c.to.isNotEmpty && _c.from.isNotEmpty
-                        ? Colors.blue
+                        ? Colors.purple
                         : Colors.grey,
                   ),
                 )),
@@ -70,7 +70,7 @@ class _TranslatorFeatureState extends State<TranslatorFeature> {
                 width: mq.width * .4,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blue),
+                    border: Border.all(color: Colors.purple),
                     borderRadius: const BorderRadius.all(Radius.circular(15))),
                 child: Obx(() => Text(_c.to.isEmpty ? 'To' : _c.to.value)),
               ),

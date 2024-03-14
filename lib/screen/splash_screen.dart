@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 import '../helper/global.dart';
 import '../helper/pref.dart';
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     //wait for some time on splash & then move to next screen
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 3), () {
       // Navigator.of(context).pushReplacement(MaterialPageRoute(
       //     builder: (_) => Pref.showOnboarding
       //         ? const OnboardingScreen()
@@ -51,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Padding(
                 padding: EdgeInsets.all(mq.width * .05),
                 child:
-                    Image.asset('assets/images/logo.png', width: mq.width * .4),
+                 Lottie.asset('assets/lottie/Robot.json', width: mq.width * .6),
               ),
             ),
 

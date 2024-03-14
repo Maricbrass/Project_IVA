@@ -8,7 +8,7 @@ class MyDialog {
 //info
   static void info(String msg) {
     Get.snackbar('Info', msg,
-        backgroundColor: Colors.blue.withOpacity(.7), colorText: Colors.white);
+        backgroundColor: Colors.purple.withOpacity(.7), colorText: Colors.white);
   }
 
 //success

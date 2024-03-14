@@ -15,7 +15,7 @@ Future<void> main() async {
   await Pref.initialize();
 
   // for app write initialization
-  AppWrite.init();
+  // AppWrite.init();
 
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   await SystemChrome.setPreferredOrientations(
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: appName,
+      title: "IVA",
       debugShowCheckedModeBanner: false,
 
       themeMode: Pref.defaultTheme,
@@ -53,9 +53,9 @@ class MyApp extends StatelessWidget {
             elevation: 1,
             centerTitle: true,
             backgroundColor: Colors.white,
-            iconTheme: IconThemeData(color: Colors.blue),
+            iconTheme: IconThemeData(color: Colors.purple),
             titleTextStyle: TextStyle(
-                color: Colors.blue, fontSize: 20, fontWeight: FontWeight.w500),
+                color: Colors.purple, fontSize: 20, fontWeight: FontWeight.w500),
           )),
 
       //
@@ -67,9 +67,18 @@ class MyApp extends StatelessWidget {
 extension AppTheme on ThemeData {
   //light text color
   Color get lightTextColor =>
-      brightness == Brightness.dark ? Colors.white70 : Colors.black54;
+      brightness == Brightness.dark ? Colors.white70 : Colors.black;
+
+  Color get chatTextColor =>
+      brightness == Brightness.dark ?  Color(0xFF414141B3) : Colors.white70;
+
+  Color get bottextColor =>
+      brightness == Brightness.dark ? Color(0xFF418158B3) : Color(0xFF418158B3);
+
+  Color get usertextColor =>
+      brightness == Brightness.dark ? Color(0xFF411581B3) : Color(0xFF411581B3);
 
   //button color
   Color get buttonColor =>
-      brightness == Brightness.dark ? Colors.cyan.withOpacity(.5) : Colors.blue;
+      brightness == Brightness.dark ? Colors.purple.withOpacity(.5) : Colors.purple;
 }

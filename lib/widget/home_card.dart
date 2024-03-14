@@ -15,7 +15,7 @@ class HomeCard extends StatelessWidget {
     Animate.restartOnHotReload = true;
 
     return Card(
-        color: Colors.blue.withOpacity(.2),
+        color: Color(0xFF458241BB).withOpacity(.8),
         elevation: 0,
         margin: EdgeInsets.only(bottom: mq.height * .02),
         shape: const RoundedRectangleBorder(
@@ -41,7 +41,7 @@ class HomeCard extends StatelessWidget {
                     Text(
                       homeType.title,
                       style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 20,
                           fontWeight: FontWeight.w500,
                           letterSpacing: 1),
                     ),
@@ -57,7 +57,7 @@ class HomeCard extends StatelessWidget {
                     Text(
                       homeType.title,
                       style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 20,
                           fontWeight: FontWeight.w500,
                           letterSpacing: 1),
                     ),

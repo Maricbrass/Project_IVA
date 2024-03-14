@@ -57,6 +57,12 @@ dependencies:
   torch_light:
   android_intent:
   url_launcher:
+  speech_to_text_google_dialog: ^0.0.6
+  external_app_launcher: ^4.0.0
+  google_generative_ai: ^0.2.2
+  porcupine_flutter:
+  picovoice_flutter:
+  google_fonts:
 
 dev_dependencies:
   flutter_test:

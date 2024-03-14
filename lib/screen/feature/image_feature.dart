@@ -122,7 +122,7 @@ class _ImageFeatureState extends State<ImageFeature> {
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         child: switch (_c.status.value) {
           Status.none =>
-            Lottie.asset('assets/lottie/ai_play.json', height: mq.height * .3),
+            Lottie.asset('assets/lottie/Ai art brush.json', height: mq.height * .3),
           Status.complete => CachedNetworkImage(
               imageUrl: _c.url.value,
               placeholder: (context, url) => const CustomLoading(),

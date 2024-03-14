@@ -7,8 +7,15 @@ import '../model/message.dart';
 
 class MessageCard extends StatelessWidget {
   final Message message;
+  final bool isFromUser;
+  final Color backgroundColor;
 
-  const MessageCard({super.key, required this.message});
+  const MessageCard({
+    required Key key,
+    required this.message,
+    required this.isFromUser,
+    required this.backgroundColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,7 @@ class MessageCard extends StatelessWidget {
             const SizedBox(width: 6),
 
             CircleAvatar(
-              radius: 18,
+              radius: 12,
               backgroundColor: Colors.white,
               child: Image.asset('assets/images/logo.png', width: 24),
             ),
@@ -36,7 +43,10 @@ class MessageCard extends StatelessWidget {
               decoration: BoxDecoration(
                   border: Border.all(color: Theme.of(context).lightTextColor),
                   borderRadius: const BorderRadius.only(
-                      topLeft: r, topRight: r, bottomRight: r)),
+                      topLeft: r, topRight: r, bottomRight: r),
+              color: Theme.of(context).bottextColor,
+              ),
+
               child: message.msg.isEmpty
                   ? AnimatedTextKit(animatedTexts: [
                       TypewriterAnimatedText(
@@ -44,11 +54,13 @@ class MessageCard extends StatelessWidget {
                         speed: const Duration(milliseconds: 100),
                       ),
                     ], repeatForever: true)
-                  : Text(
-                      message.msg,
-                      textAlign: TextAlign.center,
-                    ),
-            )
+                  : AnimatedTextKit(animatedTexts: [
+                        TypewriterAnimatedText(
+                          message.msg,
+                          textAlign: TextAlign.center,
+                          speed: const Duration(milliseconds: 100),
+                        ),
+                      ], repeatForever: false,totalRepeatCount: 1,)),
           ])
 
         //user
@@ -63,14 +75,16 @@ class MessageCard extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(color: Theme.of(context).lightTextColor),
                     borderRadius: const BorderRadius.only(
-                        topLeft: r, topRight: r, bottomLeft: r)),
+                        topLeft: r, topRight: r, bottomLeft: r),
+                  color: Theme.of(context).usertextColor,
+                ),
                 child: Text(
                   message.msg,
                   textAlign: TextAlign.center,
                 )),
 
             const CircleAvatar(
-              radius: 18,
+              radius: 12,
               backgroundColor: Colors.white,
               child: Icon(Icons.person, color: Colors.blue),
             ),

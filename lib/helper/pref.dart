@@ -46,4 +46,7 @@ class Pref {
     if (data == true) return ThemeMode.dark;
     return ThemeMode.light;
   }
+
+  static String get username => _box.get('username', defaultValue: 'User');
+  static set username(String v) => _box.put('username', v);
 }

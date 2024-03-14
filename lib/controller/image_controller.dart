@@ -26,7 +26,7 @@ class ImageController extends GetxController {
 
   Future<void> createAIImage() async {
     if (textC.text.trim().isNotEmpty) {
-      OpenAI.apiKey = apiKey;
+      // OpenAI.apiKey = apiKey;
       status.value = Status.loading;
 
       OpenAIImageModel image = await OpenAI.instance.image.create(
@@ -57,7 +57,7 @@ class ImageController extends GetxController {
 
       log('filePath: ${file.path}');
       //save image to gallery
-      await GallerySaver.saveImage(file.path, albumName: appName)
+      await GallerySaver.saveImage(file.path, albumName: "IVA")
           .then((success) {
         //hide loading
         Get.back();

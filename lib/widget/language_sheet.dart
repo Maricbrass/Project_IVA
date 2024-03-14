@@ -37,7 +37,7 @@ class _LanguageSheetState extends State<LanguageSheet> {
 
             onTapOutside: (e) => FocusScope.of(context).unfocus(),
             decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.translate_rounded, color: Colors.blue),
+                prefixIcon: Icon(Icons.translate_rounded, color: Colors.purple),
                 hintText: 'Search Language...',
                 hintStyle: TextStyle(fontSize: 14),
                 border: OutlineInputBorder(

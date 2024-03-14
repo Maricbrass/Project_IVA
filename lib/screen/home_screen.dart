@@ -22,6 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     Pref.showOnboarding = false;
+    final un = Pref.username;
+    print("Username: "+un) ;
   }
 
   @override
@@ -29,13 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
     //initializing device size
     mq = MediaQuery.sizeOf(context);
 
-    //sample api call
-    // APIs.getAnswer('hii');
-
     return Scaffold(
       //app bar
       appBar: AppBar(
-        title: const Text(appName),
+        title: const Text("IVA", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
 
         //
         actions: [
@@ -50,21 +49,35 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               icon: Obx(() => Icon(
                   _isDarkMode.value
-                      ? Icons.brightness_2_rounded
-                      : Icons.sunny,
-                  size: 26)))
+                      ? Icons.sunny : Icons.brightness_2_rounded,
+                  size: 26, color: Colors.white)))
         ],
+        backgroundColor: Colors.blueGrey,
       ),
 
-      //ad
-     // bottomNavigationBar: AdHelper.nativeBannerAd(),
-
       //body
-      body: ListView(
+      body:Container(
+    width: double.infinity,
+    height: double.infinity,
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Color(0xDA25272D), Color(0x42515660)],
+        stops: [0, 1],
+        begin: AlignmentDirectional(1, 0.87),
+        end: AlignmentDirectional(-1, -0.87),
+      ),
+      // borderRadius: BorderRadius.circular(8),
+      border: Border.all(
+        color: Color(0x49FFFFFF),
+        width: 1,
+      ),
+    ),
+      child: ListView(
         padding: EdgeInsets.symmetric(
             horizontal: mq.width * .04, vertical: mq.height * .015),
         children: HomeType.values.map((e) => HomeCard(homeType: e)).toList(),
       ),
+    ),
     );
   }
 }

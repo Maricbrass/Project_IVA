@@ -201,31 +201,31 @@ class TranslateController extends GetxController {
   //   "Zulu"
   // ];
 
-  Future<void> translate() async {
-    if (textC.text.trim().isNotEmpty && to.isNotEmpty) {
-      status.value = Status.loading;
-
-      String prompt = '';
-
-      if (from.isNotEmpty) {
-        prompt =
-            'Can you translate given text from ${from.value} to ${to.value}:\n${textC.text}';
-      } else {
-        prompt = 'Can you translate given text to ${to.value}:\n${textC.text}';
-      }
-
-      log(prompt);
-
-      final res = await APIs.getAnswer(prompt);
-      resultC.text = utf8.decode(res.codeUnits);
-
-      status.value = Status.complete;
-    } else {
-      status.value = Status.none;
-      if (to.isEmpty) MyDialog.info('Select To Language!');
-      if (textC.text.isEmpty) MyDialog.info('Type Something to Translate!');
-    }
-  }
+  // Future<void> translate() async {
+  //   if (textC.text.trim().isNotEmpty && to.isNotEmpty) {
+  //     status.value = Status.loading;
+  //
+  //     String prompt = '';
+  //
+  //     if (from.isNotEmpty) {
+  //       prompt =
+  //           'Can you translate given text from ${from.value} to ${to.value}:\n${textC.text}';
+  //     } else {
+  //       prompt = 'Can you translate given text to ${to.value}:\n${textC.text}';
+  //     }
+  //
+  //     log(prompt);
+  //
+  //     final res = await APIs.getAnswer(prompt);
+  //     resultC.text = utf8.decode(res.codeUnits);
+  //
+  //     status.value = Status.complete;
+  //   } else {
+  //     status.value = Status.none;
+  //     if (to.isEmpty) MyDialog.info('Select To Language!');
+  //     if (textC.text.isEmpty) MyDialog.info('Type Something to Translate!');
+  //   }
+  // }
 
   void swapLanguages() {
     if (to.isNotEmpty && from.isNotEmpty) {
